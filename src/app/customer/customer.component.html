@@ -1,0 +1,6 @@
+<form>
+  <shared-ui-text label="First Name" [control]="form.firstName"></shared-ui-text>
+  <shared-ui-text label="Last Name" [control]="form.lastName"></shared-ui-text>
+  <address [form]="form.Address"></address>
+  <order *ngFor="let order of form.Orders.controls" [form]="order"></order>
+</form>
