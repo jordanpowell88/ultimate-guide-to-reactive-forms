@@ -2,7 +2,7 @@ import { Pipe, PipeTransform } from "@angular/core";
 import { ValidationErrors } from "@angular/forms";
 
 @Pipe({
-  name: "errorMessages"
+  name: "errorKeys"
 })
 export class ErrorMessagesPipe implements PipeTransform {
   transform(errors: ValidationErrors): string[] {

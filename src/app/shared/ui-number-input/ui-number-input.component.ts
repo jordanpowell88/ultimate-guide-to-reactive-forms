@@ -5,7 +5,7 @@ import { validationMessages } from "../messages";
 @Component({
   selector: "shared-ui-number",
   templateUrl: "./ui-number-input.component.html",
-  styles: ["./ui-number-input.component.scss"]
+  styles: ["./ui-number-input.component.css"]
 })
 export class SharedUiNumberInputComponent {
   @Input() label = "";
