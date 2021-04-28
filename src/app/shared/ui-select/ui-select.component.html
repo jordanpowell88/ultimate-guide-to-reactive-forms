@@ -5,7 +5,7 @@
       {{ option }}
     </mat-option>
   </mat-select>
-  <mat-error *ngFor="let error of control.errors | errorMessages">
+  <mat-error *ngFor="let error of control.errors | errorKeys">
     {{ messages[error] }}
   </mat-error>
 </mat-form-field>

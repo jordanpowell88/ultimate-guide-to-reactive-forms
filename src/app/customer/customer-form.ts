@@ -18,8 +18,8 @@ export class CustomerForm extends FormGroup {
     return this.controls.address as AddressForm;
   }
 
-  get Orders(): FormArray {
-    return this.controls.orders as FormArray;
+  get Orders(): OrderForm[] {
+    return (this.controls.orders as FormArray).controls as OrderForm[];
   }
 
   constructor(

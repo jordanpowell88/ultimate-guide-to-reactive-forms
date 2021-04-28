@@ -5,7 +5,7 @@ import { validationMessages } from "../messages";
 @Component({
   selector: "shared-ui-text",
   templateUrl: "./ui-text-input.component.html",
-  styles: ["./ui-text-input.component.scss"]
+  styles: ["./ui-text-input.component.css"]
 })
 export class SharedUiTextInputComponent {
   @Input() label = "";
