@@ -3,6 +3,8 @@ import { debounceTime, filter, take } from 'rxjs/operators';
 import { Customer } from './customer';
 import { CustomerForm } from './customer-form';
 import { CustomerService } from './customer.service';
+import { Order } from './order/order';
+import { OrderForm } from './order/order-form';
 
 @Component({
   selector: 'customer',
@@ -30,11 +32,24 @@ export class CustomerComponent implements OnInit {
 
   submit(): void {
     if (this.form.valid) {
-      this.handleForm(this.form.value);
+      this.handleForm(this.form);
     }
   }
 
-  handleForm(customer: Customer): void {
-    this.customerService.saveCustomer(customer);
+  handleForm(form: CustomerForm): void {
+    this.customerService.saveCustomer(this.mapFormToCustomer(form));
+  }
+
+  private mapFormToCustomer(form: CustomerForm): Customer {
+    return {
+      ...form.value,
+      orders: this.mapOrders(form.Orders)
+    } as Customer;
+  }
+
+  private mapOrders(form: OrderForm[]): Order[] {
+    return form.map(order => ({
+      ...order.value
+    }));
   }
 }

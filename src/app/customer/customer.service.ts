@@ -31,6 +31,7 @@ export class CustomerService {
   }
 
   saveCustomer(customer: Customer): Observable<Customer> {
+    console.log(customer);
     return of(customer);
   }
 }
