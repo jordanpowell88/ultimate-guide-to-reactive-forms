@@ -5,5 +5,5 @@
   <address [form]="form.Address"></address>
   <h4>Orders</h4>
   <order *ngFor="let order of form.Orders" [form]="order"></order>
-  <button type="submit" (click)="submit()">Submit</button>
+  <button type="button" (click)="submit()">Submit</button>
 </form>
